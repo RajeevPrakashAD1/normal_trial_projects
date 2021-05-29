@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+//import "App.css";
+import styled from 'styled-components';
+import Review from './components/Review';
+import SideNav from './components/sidenav';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {Route} from 'react-router-dom';
+
+import "bootstrap/dist/css/bootstrap.css";
+import Home from './components/Home';
+import Lorem from './components/loremcreator';
+import VideoPlaying from './reusableThings/video';
+import CocktailHome from './components/coctailsproject/cocktailHome';
+
+
+
+
+export default function App() {
+	return (
+		<React.Fragment>
+           <MainContainer>
+            <SideNav />
+           
+			
+            <Route exact path="/" component={Home} />
+            <Route exact path="/review" component={Review} />
+            <Route exact path="/epsomlourem" component={Lorem} />
+            <Route exact path="/camera" component={VideoPlaying} />
+            <Route exact path="/cocktails" component={CocktailHome} />
+
+            
+            </MainContainer>
+            
+           
+			
+
+			
+		</React.Fragment>
+	);
 }
 
-export default App;
+
+const MainContainer = styled.div `
+
+ 
+
+`
